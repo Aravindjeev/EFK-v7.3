@@ -144,7 +144,7 @@ transportPort: 9300
 
 service:
   type: ClusterIP
-  nodePort:
+  nodePort: 30655
   annotations: {}
 
 updateStrategy: RollingUpdate
