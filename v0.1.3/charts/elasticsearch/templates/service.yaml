@@ -10,8 +10,8 @@ metadata:
 spec:
   type: {{ .Values.master.service.type }}
   ports:
-    - port: {{ .Values.service.externalPort1 }}
-      targetPort: {{ .Values.service.internalPort1 }}
+    - port: 444
+      targetPort: 9200
       protocol: TCP
     - name: transport
       port: 9300
