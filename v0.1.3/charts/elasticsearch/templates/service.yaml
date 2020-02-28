@@ -10,7 +10,8 @@ metadata:
 spec:
   type: {{ .Values.master.service.type }}
   ports:
-    - port: 444
+    - name: http
+      port: 444
       targetPort: 9200
       protocol: TCP
     - name: transport
