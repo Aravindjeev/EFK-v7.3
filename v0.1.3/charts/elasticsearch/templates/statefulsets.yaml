@@ -13,7 +13,7 @@ spec:
   replicas: {{ .Values.master.replicas }}
   selector:
     matchLabels:
-      app: "{{ template "elasticsearch.fullname" . }}"
+      app: "{{ template "elasticsearch.name" . }}"
   template:
     metadata:
       labels:
