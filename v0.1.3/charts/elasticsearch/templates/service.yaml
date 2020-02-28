@@ -11,12 +11,13 @@ spec:
   type: {{ .Values.master.service.type }}
   ports:
     - name: http
-      port: 444
+      port: 30500
       targetPort: 9200
       protocol: TCP
     - name: transport
-      port: 9300
-      targetPort: transport
+      targetPort: 9300
+      port: 30400
+      protocol: TCP
   selector:
     app: {{ template "elasticsearch.name" . }}
     release: {{ .Release.Name }}
