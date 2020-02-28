@@ -10,11 +10,9 @@ metadata:
 spec:
   type: {{ .Values.master.service.type }}
   ports:
-    {{ if .Values.master.exposeHttp }}
-    - name: http
-      port: 9200
-      targetPort: http
-    {{ end }}
+    - port: {{ .Values.service.externalPort1 }}
+      targetPort: {{ .Values.service.internalPort1 }}
+      protocol: TCP
     - name: transport
       port: 9300
       targetPort: transport
