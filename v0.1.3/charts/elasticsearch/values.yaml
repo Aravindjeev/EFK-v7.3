@@ -30,8 +30,9 @@ master:
 
   service:
     name: elasticsearch
-    type: Nodeport
-
+    type: NodePort
+    externalPort1: 444
+    internalPort1: 9200
   ## Enable persistence using Persistent Volume Claims
   ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
   ##
