@@ -18,7 +18,7 @@ spec:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     app: "{{ template "uname" . }}"
   ports:
-  - name: http
+    - name: http
       port: 30500
       targetPort: 9200
       protocol: TCP
