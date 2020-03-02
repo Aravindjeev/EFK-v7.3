@@ -19,14 +19,13 @@ spec:
     app: "{{ template "uname" . }}"
   ports:
   - name: http
-    protocol: TCP
-    port: {{ .Values.httpPort }}
-{{- if .Values.service.nodePort }}
-    nodePort: {{ .Values.service.nodePort }}
-{{- end }}
-  - name: transport
-    protocol: TCP
-    port: {{ .Values.transportPort }}
+      port: 30500
+      targetPort: 9200
+      protocol: TCP
+    - name: transport
+      targetPort: 9300
+      port: 30400
+      protocol: TCP
 ---
 kind: Service
 apiVersion: v1
